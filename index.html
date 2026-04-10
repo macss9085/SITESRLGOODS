@@ -7,20 +7,30 @@
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     html, body { width: 100vw; height: 100vh; background: #000; overflow: hidden; }
-    iframe {
+
+    /* Boxes — full screen background */
+    #boxes {
       position: fixed;
       top: 0; left: 0;
       width: 100vw;
       height: 100vh;
       border: none;
+      z-index: 0;
+    }
+
+    /* Navbar — sits on top, only covers top strip */
+    #navbar {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100px;
+      border: none;
+      z-index: 1;
     }
   </style>
 </head>
 <body>
-  <iframe
-    src="https://my.spline.design/thresholddarkambientui-jREVFGyt6Li5oE5KDVAdCzoj/"
-    allow="autoplay"
-    allowfullscreen
-  ></iframe>
+  <iframe id="boxes"  src="https://my.spline.design/boxeshover-1Vq9xGiL6a9Lg0VSMlj0hhPs/" allow="autoplay" allowfullscreen></iframe>
+  <iframe id="navbar" src="https://my.spline.design/thresholddarkambientui-jREVFGyt6Li5oE5KDVAdCzoj/" allow="autoplay" allowfullscreen></iframe>
 </body>
 </html>
