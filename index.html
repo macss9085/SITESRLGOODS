@@ -4,17 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SRLGOODS</title>
+  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.28/build/spline-viewer.js"></script>
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     html, body { width: 100vw; height: 100vh; background: #000; overflow: hidden; }
 
-    /* Boxes — full screen background */
-    #boxes {
+    /* Boxes — full screen background using spline-viewer */
+    spline-viewer {
       position: fixed;
       top: 0; left: 0;
       width: 100vw;
       height: 100vh;
-      border: none;
       z-index: 0;
     }
 
@@ -28,8 +28,6 @@
       z-index: 1;
     }
 
-    /* Render the navbar scene at full viewport so its content is properly sized,
-       then shift it up so the navbar UI (which sits in the vertical center) is visible */
     #navbar-wrap iframe {
       width: 100vw;
       height: 100vh;
@@ -40,10 +38,12 @@
   </style>
 </head>
 <body>
-  <iframe id="boxes" src="https://my.spline.design/boxeshover-1Vq9xGiL6a9Lg0VSMlj0hhPs/" allow="autoplay" allowfullscreen></iframe>
+
+  <spline-viewer url="https://prod.spline.design/VK0KgYVjWBY0pFYw/scene.splinecode"></spline-viewer>
 
   <div id="navbar-wrap">
     <iframe src="https://my.spline.design/thresholddarkambientui-jREVFGyt6Li5oE5KDVAdCzoj/" allow="autoplay" allowfullscreen></iframe>
   </div>
+
 </body>
 </html>
