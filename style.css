@@ -1,0 +1,161 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --white: #ffffff;
+  --accent: #e8d5b0;
+  --dark: #0a0a0a;
+  --muted: rgba(255, 255, 255, 0.55);
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background: var(--dark);
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: var(--white);
+  overflow-x: hidden;
+}
+
+/* ── Spline background ── */
+.spline-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+}
+
+.spline-bg spline-viewer {
+  width: 100%;
+  height: 100%;
+}
+
+/* Thin gradient overlay so text stays legible */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    135deg,
+    rgba(10, 10, 10, 0.55) 0%,
+    rgba(10, 10, 10, 0.2) 50%,
+    rgba(10, 10, 10, 0.55) 100%
+  );
+  pointer-events: none;
+}
+
+/* ── Layout ── */
+main.hero {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 0 48px;
+}
+
+/* ── Nav ── */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 36px 0;
+}
+
+.nav-logo {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.nav-links {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--white);
+}
+
+/* ── Hero content ── */
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  max-width: 640px;
+  padding-bottom: 80px;
+}
+
+.hero-title {
+  display: flex;
+  flex-direction: column;
+  font-size: clamp(3.5rem, 8vw, 7rem);
+  font-weight: 800;
+  line-height: 1.0;
+  letter-spacing: -0.03em;
+  margin-bottom: 24px;
+}
+
+.hero-title .line {
+  display: block;
+}
+
+.hero-title .accent {
+  color: var(--accent);
+}
+
+.hero-sub {
+  font-size: 1.05rem;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  margin-bottom: 40px;
+  max-width: 360px;
+  line-height: 1.6;
+}
+
+/* ── CTA button ── */
+.cta-btn {
+  display: inline-block;
+  padding: 14px 36px;
+  border: 1.5px solid var(--white);
+  color: var(--white);
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  transition: background 0.25s ease, color 0.25s ease;
+  width: fit-content;
+}
+
+.cta-btn:hover {
+  background: var(--white);
+  color: var(--dark);
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  main.hero {
+    padding: 0 24px;
+  }
+
+  .nav-links {
+    gap: 24px;
+  }
+}
