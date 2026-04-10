@@ -4,13 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SRLGOODS</title>
-  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.28/build/spline-viewer.js"></script>
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     html, body { width: 100vw; height: 100vh; background: #000; overflow: hidden; }
 
-    /* Boxes — full screen background using spline-viewer */
-    spline-viewer {
+    #canvas3d {
       position: fixed;
       top: 0; left: 0;
       width: 100vw;
@@ -18,7 +16,6 @@
       z-index: 0;
     }
 
-    /* Navbar wrapper — clips the Spline scene to just the navbar strip */
     #navbar-wrap {
       position: fixed;
       top: 0; left: 0;
@@ -39,11 +36,18 @@
 </head>
 <body>
 
-  <spline-viewer url="https://prod.spline.design/VK0KgYVjWBY0pFYw/scene.splinecode"></spline-viewer>
+  <canvas id="canvas3d"></canvas>
 
   <div id="navbar-wrap">
     <iframe src="https://my.spline.design/thresholddarkambientui-jREVFGyt6Li5oE5KDVAdCzoj/" allow="autoplay" allowfullscreen></iframe>
   </div>
+
+  <script type="module">
+    import { Application } from 'https://unpkg.com/@splinetool/runtime@1.9.28/build/runtime.js';
+    const canvas = document.getElementById('canvas3d');
+    const app = new Application(canvas);
+    app.load('https://prod.spline.design/VK0KgYVjWBY0pFYw/scene.splinecode');
+  </script>
 
 </body>
 </html>
