@@ -18,19 +18,32 @@
       z-index: 0;
     }
 
-    /* Navbar — sits on top, only covers top strip */
-    #navbar {
+    /* Navbar wrapper — clips the Spline scene to just the navbar strip */
+    #navbar-wrap {
       position: fixed;
       top: 0; left: 0;
       width: 100vw;
-      height: 100px;
-      border: none;
+      height: 120px;
+      overflow: hidden;
       z-index: 1;
+    }
+
+    /* Render the navbar scene at full viewport so its content is properly sized,
+       then shift it up so the navbar UI (which sits in the vertical center) is visible */
+    #navbar-wrap iframe {
+      width: 100vw;
+      height: 100vh;
+      border: none;
+      position: absolute;
+      top: 0; left: 0;
     }
   </style>
 </head>
 <body>
-  <iframe id="boxes"  src="https://my.spline.design/boxeshover-1Vq9xGiL6a9Lg0VSMlj0hhPs/" allow="autoplay" allowfullscreen></iframe>
-  <iframe id="navbar" src="https://my.spline.design/thresholddarkambientui-jREVFGyt6Li5oE5KDVAdCzoj/" allow="autoplay" allowfullscreen></iframe>
+  <iframe id="boxes" src="https://my.spline.design/boxeshover-1Vq9xGiL6a9Lg0VSMlj0hhPs/" allow="autoplay" allowfullscreen></iframe>
+
+  <div id="navbar-wrap">
+    <iframe src="https://my.spline.design/thresholddarkambientui-jREVFGyt6Li5oE5KDVAdCzoj/" allow="autoplay" allowfullscreen></iframe>
+  </div>
 </body>
 </html>
