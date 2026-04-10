@@ -4,43 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SRLGOODS</title>
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; background: #000; overflow: hidden; }
+    spline-viewer { width: 100%; height: 100vh; display: block; }
+  </style>
   <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.28/build/spline-viewer.js"></script>
 </head>
 <body>
-
-  <!-- Spline Interactive Background -->
-  <div class="spline-bg">
-    <spline-viewer
-      url="https://prod.spline.design/MQVVZ4DJX81o63oy3nnMkp42/scene.splinecode"
-      loading-anim-type="spinner-small-dark"
-    ></spline-viewer>
-  </div>
-
-  <!-- Overlay to prevent Spline from capturing all pointer events on content -->
-  <div class="overlay"></div>
-
-  <!-- Landing Page Content -->
-  <main class="hero">
-    <nav class="nav">
-      <div class="nav-logo">SRLGOODS</div>
-      <ul class="nav-links">
-        <li><a href="#">Shop</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </nav>
-
-    <div class="hero-content">
-      <h1 class="hero-title">
-        <span class="line">Premium</span>
-        <span class="line accent">Quality.</span>
-      </h1>
-      <p class="hero-sub">Curated goods for the discerning buyer.</p>
-      <a href="#" class="cta-btn">Shop Now</a>
-    </div>
-  </main>
-
-  <script src="main.js"></script>
+  <spline-viewer url="https://prod.spline.design/1Vq9xGiL6a9Lg0VSMlj0hhPs/scene.splinecode"></spline-viewer>
 </body>
 </html>
