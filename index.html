@@ -7,10 +7,46 @@
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     html, body { width: 100%; height: 100%; background: #000; overflow: hidden; }
-    iframe { width: 100%; height: 100vh; border: none; display: block; }
+
+    /* Background Spline scene */
+    .bg-scene {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+    }
+    .bg-scene iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    /* Navbar Spline scene */
+    .navbar-scene {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 80px;
+      z-index: 10;
+    }
+    .navbar-scene iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
   </style>
 </head>
 <body>
-  <iframe src="https://my.spline.design/boxeshover-1Vq9xGiL6a9Lg0VSMlj0hhPs/" allowfullscreen></iframe>
+
+  <div class="bg-scene">
+    <iframe src="https://my.spline.design/boxeshover-1Vq9xGiL6a9Lg0VSMlj0hhPs/" allowfullscreen></iframe>
+  </div>
+
+  <div class="navbar-scene">
+    <iframe src="https://my.spline.design/thresholddarkambientui-xnyRubY3EE9ZqUXImvNAdRuc/" allowfullscreen></iframe>
+  </div>
+
 </body>
 </html>
